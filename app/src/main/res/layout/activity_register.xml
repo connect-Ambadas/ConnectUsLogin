@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="viewModel"
+            type="com.test.sum.ui.registration.RegisterViewModel" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <!-- ScrollView for form fields -->
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:fillViewport="true">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <!-- Admin ID -->
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Admin ID"
+                    android:inputType="number"
+                    android:text="@={viewModel.admin.adminId}" />
+
+                <!-- Admin Name -->
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Admin Name"
+                    android:text="@={viewModel.admin.adminName}" />
+
+                <!-- Admin Code -->
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Admin Code"
+                    android:text="@={viewModel.admin.adminCode}" />
+
+                <!-- Admin Last Name -->
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Admin Last Name"
+                    android:text="@={viewModel.admin.adminLastName}" />
+
+                <!-- Admin Email ID -->
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Admin Email"
+                    android:inputType="textEmailAddress"
+                    android:text="@={viewModel.admin.adminEmailId}" />
+
+                <!-- Admin Password -->
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Admin Password"
+                    android:inputType="textPassword"
+                    android:text="@={viewModel.admin.adminPassword}" />
+
+                <!-- Admin Phone Number -->
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Phone Number"
+                    android:inputType="phone"
+                    android:text="@={viewModel.admin.adminPhoneNumber}" />
+
+                <!-- Admin Shop Name -->
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Shop Name"
+                    android:text="@={viewModel.admin.adminShopName}" />
+
+                <!-- Admin Shop Address -->
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Shop Address"
+                    android:text="@={viewModel.admin.adminShopAddress}" />
+
+                <!-- Role -->
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Role"
+                    android:text="@={viewModel.admin.role}" />
+
+                <!-- Merchant Code -->
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Merchant Code"
+                    android:text="@={viewModel.admin.merchantCode}" />
+            </LinearLayout>
+        </ScrollView>
+
+        <!-- Submit Button (Outside ScrollView) -->
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Submit"
+            android:onClick="@{() -> viewModel.onSubmit()}"
+            android:padding="12dp"
+            android:backgroundTint="@android:color/holo_blue_dark"
+            android:textColor="@android:color/white"/>
+    </LinearLayout>
+</layout>
